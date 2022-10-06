@@ -29,6 +29,6 @@ else:
     cnt = 0
     for i in range(1, N+1):
         if visited[i-1] != 1:
-            solution(i)
+            bfs(i)
             cnt += 1
     print(cnt)
