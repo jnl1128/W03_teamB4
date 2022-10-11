@@ -41,23 +41,3 @@ topologySort()
 for i, nums in enumerate(visited2[N]):
     if nums>0:
         print(i, nums)
-
-                
-
-# result=[]
-# def topologySort():
-#     dq=deque()
-#     for key in compare_list.keys():
-#         if A[key]==0: # 초기 간선을 받은 횟수가 0이라면 진입로라는 뜻
-#             dq.append(key)
-#             while dq:
-#                 x=dq.popleft()
-#                 result.append(x)
-#                 for k in compare_list[x]:
-#                     A2[k]-=1
-#                     if A2[k]==0:
-#                         dq.append(k)
-
-# topologySort()
-# print(*result)
-
