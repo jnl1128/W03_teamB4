@@ -6,15 +6,9 @@ input=sys.stdin.readline
 
 N=int(input())
 
-
-# for i in range(N):
-#     a,b=map(int,input().strip().split())
-#     line_info[a].append(b)
-#     line_info[b].append(a)
 line_info=defaultdict(list)
 while 1:
     try:
-        # A.append(list(map(int,input().strip().split())))
         a,b=map(int,input().strip().split())
         line_info[a].append(b)
         line_info[b].append(a)
