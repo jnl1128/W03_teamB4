@@ -42,6 +42,6 @@ def dfs(cnt,sum):
             command[i] +=1 # 해당 커맨드 사용후 다시 채워넣기 안그러면 한번만 돌고 끝나버림 --> 앞 방향에서 한번 돌았으면 역순으로도 돌게하고 넣었다 빼줬다 하면서 여러가지 경우의 수를 돌수 있게 해줌
 
 
-dfs(1,A[0])
+dfs(1,A[0]) # cnt - index를 정해서 불러오기, A[0]는 처음 index에 해당하는 값을 넣음 
 print(answer_max)
 print(answer_min)
