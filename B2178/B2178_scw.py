@@ -4,16 +4,16 @@ sys.setrecursionlimit(10**8)
 
 input=sys.stdin.readline
 
-N,M= map(int,input().strip().split())
+N,M= map(int,input().strip().split()) 
 
 A=[]
-for i in range(N):    
+for i in range(N): # 미로의 정보를 받음
     A.append(list(map(int,input().strip())))
 
-dx=[-1,1,0,0]
+dx=[-1,1,0,0] # 4방향 탐색을 해야하기때문에 방향 확인
 dy=[0,0,-1,1]
 
-def bfs(x,y):
+def bfs(x,y): # BFS 탐색
     dq=deque()
     dq.append((x,y))
     while dq:
@@ -32,7 +32,7 @@ def bfs(x,y):
 
 
 
-print(bfs(0,0))
+print(bfs(0,0)) # 시작하는 지점은 0,0
 
 
 

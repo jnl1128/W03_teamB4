@@ -5,7 +5,7 @@ sys.setrecursionlimit(10**8)
 input=sys.stdin.readline
 
 
-def check_list(a) :
+def check_list(a) : #DFS
     for i in line[a]:
         k=i        
         if visited[k]==1 and i==line[a][len(line[a])-1]:            
@@ -18,12 +18,12 @@ def check_list(a) :
 N, M=map(int,input().strip().split())
 
 line=defaultdict(list)
-for i in range(M):
+for i in range(M): # 방향이 없기 때문에 양방향으로 dictionary를 만들음
     a, b=map(int,input().strip().split())
     line[a].append(b)
     line[b].append(a)
 
-for i in line:
+for i in line: # 딕셔너리 내부의 value를 정렬함
     line[i].sort()
 cnt=0
 visited=[0]*(N+1)

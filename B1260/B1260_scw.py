@@ -21,29 +21,13 @@ def bfs(v): # BFS 탐색 실시
                 dq.append(i)
                 visit[i]=1
 
-
-
 input = sys.stdin.readline
 
 N,M,k=map(int,input().strip().split())
 
 A=defaultdict(list)
 
-# for i in range(M): # 데이터 input, dic 형태로
-#     city1,city2=map(int,input().strip().split())
-#     if city1 != city2 and city1 !=" " and city2 !=" ":
-#         if city1 in A and city2 not in A[city1]:
-#             A[city1].append(city2)
-#         elif city1 not in A:
-#             A[city1]=[city2]
-#         else:
-#             continue
-#         if city2 in A and city1 not in A[city2]:
-#             A[city2].append(city1)
-#         elif city2 not in A:
-#             A[city2]=[city1]
-#         else:
-#             continue
+
 for i in range(M): # 데이터 input, dic 형태로
     city1,city2=map(int,input().strip().split())
     A[city1].append(city2)
@@ -65,3 +49,19 @@ else:
     print()
     visit=[0]*(N+1)
     bfs(k)
+
+# for i in range(M): # 데이터 input, dic 형태로
+#     city1,city2=map(int,input().strip().split())
+#     if city1 != city2 and city1 !=" " and city2 !=" ":
+#         if city1 in A and city2 not in A[city1]:
+#             A[city1].append(city2)
+#         elif city1 not in A:
+#             A[city1]=[city2]
+#         else:
+#             continue
+#         if city2 in A and city1 not in A[city2]:
+#             A[city2].append(city1)
+#         elif city2 not in A:
+#             A[city2]=[city1]
+#         else:
+#             continue

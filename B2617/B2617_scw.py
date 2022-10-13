@@ -14,7 +14,7 @@ for i in range(M):
 
 mid=(N+1)//2 # 홀수개가 들어오기 때문에 중간부는 (N+1)//2 임
 
-def dfs(array,start):
+def bfs(array,start):
     cnt=0
     visited[start]=1 # 처음 들어온 위치에 방문 체크
     dq=deque()
@@ -26,15 +26,15 @@ def dfs(array,start):
                 cnt+=1 # 카운트 개수 올리고
                 visited[i]=1 # 방문 처리
                 dq.append(i) # 방문 처리 한 애를 넣고 다시 다음 무게 체크를 할 것임
-    return cnt # dfs 탈출하면 cnt 값을 리턴
+    return cnt # bfs 탈출하면 cnt 값을 리턴
 
 
 answer=0
 for i in range(1,N+1): # 구슬이 1번부터 N개까지 있다고 했으니깐 1번부터 돌림
     visited=[0]*(N+1) # 구슬이 들어올때마다 새로운 체크 리스트가 필요함
-    if dfs(big_list,i)>=mid:
+    if bfs(big_list,i)>=mid:
         answer+=1
-    if dfs(small_list,i)>=mid:
+    if bfs(small_list,i)>=mid:
         answer+=1
 print(answer)
 

@@ -8,7 +8,7 @@ input=sys.stdin.readline
 N,M,K,X = map(int,input().strip().split())
 
 city=defaultdict(list)
-for i in range(M):
+for i in range(M): # 방향이 존재하기 때문에 한방향으로만 탐색이 가능(시작점이 존재)
     a,b=map(int,input().strip().split())
     city[a].append(b)
     #city[b].append(a)
@@ -34,7 +34,7 @@ def bfs(X,cnt,K):
 bfs(X,cnt,K)
 
 
-visited[X]=0
+# visited[X]=0
 # print(answer_list)
 # print(visited)
     

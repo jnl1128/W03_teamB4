@@ -1,5 +1,4 @@
 import sys,heapq
-from collections import deque
 sys.setrecursionlimit(10**8)
 
 input=sys.stdin.readline
@@ -20,6 +19,17 @@ def find_good(heap):
                     heapq.heappush(heap,(a,z,y,x))
     return heap
     
+def check_tomato(a):
+    global M,N,H,A
+    for z in range(H):
+        for y in range(N):
+            for x in range(M):
+                if A[z][y][x]==0:
+                    print(-1)
+                    exit(0)
+    if z==H-1 and y==N-1 and x==M-1:
+        print(a)
+
 
 def bfs():
     global M,N,H,A
@@ -40,16 +50,7 @@ def bfs():
                     continue
     return check_tomato(a)
 
-def check_tomato(a):
-    global M,N,H,A
-    for z in range(H):
-        for y in range(N):
-            for x in range(M):
-                if A[z][y][x]==0:
-                    print(-1)
-                    exit(0)
-    if z==H-1 and y==N-1 and x==M-1:
-        print(a)
+
 
 bfs()
 
